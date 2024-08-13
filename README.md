@@ -1,5 +1,9 @@
 # Text To Video API
 
+### Youtube tutorial -> https://youtu.be/LDBnlO3PDBY
+
+### Steps
+
 To generate a video from text, here are the steps involved
 
 1. Generate an API key from https://viral.vadoo.tv/profile
