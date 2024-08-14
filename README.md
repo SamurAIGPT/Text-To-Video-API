@@ -51,3 +51,5 @@ else:
     print(f"Failed to generate video. Status code: {response.status_code}")
     print(response.text)
 ```
+
+Link to app [Text to Video API](https://www.vadoo.tv/text-to-video-api)
