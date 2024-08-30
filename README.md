@@ -2,6 +2,8 @@
 
 ### Youtube tutorial -> https://youtu.be/LDBnlO3PDBY
 
+### Medium article -> https://medium.com/@anilmatcha/text-to-video-api-in-python-ai-video-automation-tutorial-561b49241d70
+
 ### Steps
 
 To generate a video from text, here are the steps involved
