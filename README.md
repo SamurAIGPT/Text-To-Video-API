@@ -1,57 +1,128 @@
 # Text To Video API
 
-### Youtube tutorial -> https://youtu.be/LDBnlO3PDBY
+[![GitHub stars](https://img.shields.io/github/stars/SamurAIGPT/Text-To-Video-API?style=social)](https://github.com/SamurAIGPT/Text-To-Video-API/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 
-### Medium article -> https://medium.com/@anilmatcha/text-to-video-api-in-python-ai-video-automation-tutorial-561b49241d70
+Generate AI videos from text with a simple API call. Create engaging short-form content for TikTok, YouTube Shorts, Instagram Reels, and more.
 
-### Steps
+## Tutorials
 
-To generate a video from text, here are the steps involved
+- **YouTube**: [Watch Tutorial](https://youtu.be/LDBnlO3PDBY)
+- **Medium**: [Read Article](https://medium.com/@anilmatcha/text-to-video-api-in-python-ai-video-automation-tutorial-561b49241d70)
 
-1. Generate an API key from https://viral.vadoo.tv/profile
-2. Setup a webhook url at https://viral.vadoo.tv/profile to received generated video metadata
+## Features
 
-### Python code
+- **Text-to-Video** - Generate complete videos from text prompts
+- **Customizable Voice** - Choose from multiple AI voices
+- **Multiple Themes** - Apply different visual styles
+- **Language Support** - Generate videos in multiple languages
+- **Duration Control** - Specify video length (30-60s, etc.)
+- **Webhook Delivery** - Receive video URL when generation completes
 
-Install requests library to send a post request
+## Quick Start
 
-```pip install requests```
+### 1. Get API Key
 
-Use the below code to generate a video, the download url of generated video will be sent to the webhook setup
-Topic, voice, theme, language and duration are optional but can be customized. More info about these are available here https://docs.vadoo.tv/docs/category/guide
+Sign up and get your API key at [viral.vadoo.tv/profile](https://viral.vadoo.tv/profile)
 
+### 2. Set Up Webhook
+
+Configure your webhook URL at [viral.vadoo.tv/profile](https://viral.vadoo.tv/profile) to receive generated video metadata.
+
+### 3. Generate Video
+
+```bash
+pip install requests
 ```
+
+```python
 import requests
 
-# Replace 'YOUR_API_KEY' with your actual API key
 API_KEY = 'YOUR_API_KEY'
 url = 'https://viralapi.vadoo.tv/api/generate_video'
 
-# Define the request headers
 headers = {
     'X-API-KEY': API_KEY,
     'Content-Type': 'application/json'
 }
 
-# Define the request body parameters
 data = {
-    'topic': 'Random AI Story',      # Optional: specify your topic or leave it as the default
-    'voice': 'Charlie',              # Optional: specify the voice or leave it as the default
-    'theme': 'Hormozi_1',            # Optional: specify the theme or leave it as the default
-    'language': 'English',           # Optional: specify the language or leave it as the default
-    'duration': '30-60'              # Optional: specify the duration or leave it as the default
+    'topic': 'Random AI Story',      # Your video topic
+    'voice': 'Charlie',              # Voice selection
+    'theme': 'Hormozi_1',            # Visual theme
+    'language': 'English',           # Output language
+    'duration': '30-60'              # Video duration
 }
 
-# Make the POST request to generate the video
 response = requests.post(url, headers=headers, json=data)
 
-# Check if the request was successful
 if response.status_code == 200:
-    response_data = response.json()
-    print(f"Video ID: {response_data['vid']}")
+    print(f"Video ID: {response.json()['vid']}")
 else:
-    print(f"Failed to generate video. Status code: {response.status_code}")
-    print(response.text)
+    print(f"Error: {response.status_code}")
 ```
 
-Link to app [Text to Video API](https://www.vadoo.tv/text-to-video-api)
+## API Reference
+
+### Endpoint
+
+```
+POST https://viralapi.vadoo.tv/api/generate_video
+```
+
+### Headers
+
+| Header | Value |
+|--------|-------|
+| `X-API-KEY` | Your API key |
+| `Content-Type` | `application/json` |
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `topic` | string | No | Video topic/subject |
+| `voice` | string | No | AI voice to use |
+| `theme` | string | No | Visual theme |
+| `language` | string | No | Output language |
+| `duration` | string | No | Video duration |
+
+### Response
+
+```json
+{
+  "vid": "video_id_here"
+}
+```
+
+The download URL will be sent to your configured webhook.
+
+## Available Options
+
+See full documentation for all available voices, themes, and languages: [docs.vadoo.tv](https://docs.vadoo.tv/docs/category/guide)
+
+## Use Cases
+
+- **Social Media Content** - TikTok, YouTube Shorts, Instagram Reels
+- **Marketing Videos** - Product demos, explainers
+- **Educational Content** - Tutorials, how-tos
+- **Entertainment** - Stories, facts, trivia
+
+## Web App
+
+Prefer a no-code solution? Use the web app: [Text to Video API](https://www.vadoo.tv/text-to-video-api)
+
+## Follow for Updates
+
+- [Anil Chandra Naidu Matcha](https://twitter.com/matchaman11)
+- [Ankur Singh](https://twitter.com/ankur_maker)
+
+## Related Projects
+
+- [Text-To-Video-AI](https://github.com/SamurAIGPT/Text-To-Video-AI) - Self-hosted text-to-video
+- [AI-Youtube-Shorts-Generator](https://github.com/SamurAIGPT/AI-Youtube-Shorts-Generator) - Generate YouTube Shorts
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details.
