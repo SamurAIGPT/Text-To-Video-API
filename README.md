@@ -120,6 +120,7 @@ Prefer a no-code solution? Use the web app: [Text to Video API](https://www.vado
 
 ## Related Projects
 
+- [MuAPI](https://muapi.ai) — Unified API for image, video, and audio generation across hundreds of AI models. See the [video generation docs](https://muapi.ai/docs/video-generation) and try [Veo 3 text-to-video](https://muapi.ai/playground/veo3-text-to-video).
 - [Text-To-Video-AI](https://github.com/SamurAIGPT/Text-To-Video-AI) - Self-hosted text-to-video
 - [AI-Youtube-Shorts-Generator](https://github.com/SamurAIGPT/AI-Youtube-Shorts-Generator) - Generate YouTube Shorts
 
